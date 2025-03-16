@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Tomas Leriche | Blog",
+  description: "A collection of thoughts and ideas from Tomas Leriche.",
+};
 
 function Blog() {
   return (

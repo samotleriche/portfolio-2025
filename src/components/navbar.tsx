@@ -18,7 +18,7 @@ function Navbar() {
       <div className="w-section px-2 md:px-4 h-full flex justify-between">
         <div className="flex justify-center items-center">
           <Link href="/">
-            <TLLogo className="size-12 text-gray-300" />
+            <TLLogo className="size-10 text-gray-300" />
           </Link>
         </div>
         <ul className="flex gap-3 h-full">
@@ -30,7 +30,7 @@ function Navbar() {
             >
               <li
                 key={item}
-                className="text-gray-400 relative h-full text-sm font-semibold px-3 py-2 flex justify-center items-center"
+                className="text-gray-400 group-hover:text-gray-300 relative h-full text-sm font-semibold px-3 py-2 flex justify-center items-center"
               >
                 {item}
               </li>
@@ -49,14 +49,14 @@ function Navbar() {
             target="_blank"
             className="self-center p-3 group"
           >
-            <LinkedInLogo className="text-gray-500 group-hover:text-gray-300  size-4" />
+            <LinkedInLogo className="text-gray-400 group-hover:text-gray-300  size-4" />
           </Link>
           <Link
             href="https://github.com/samotleriche"
             target="_blank"
             className="self-center p-3 group"
           >
-            <GithubLogo className="text-gray-500 group-hover:text-gray-300  size-4" />
+            <GithubLogo className="text-gray-400 group-hover:text-gray-300  size-4" />
           </Link>
         </ul>
       </div>

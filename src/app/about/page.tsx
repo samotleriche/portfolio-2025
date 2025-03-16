@@ -1,4 +1,11 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Tomas Leriche | About",
+  description:
+    "Tomas Leriche is a software engineer and motion designer currently based in Santa Monica, California.",
+};
 
 function About() {
   return (
