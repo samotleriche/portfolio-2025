@@ -46,6 +46,9 @@ body {
   .h-section {
     @apply min-h-[calc(100vh_-_var(--h-navbar))] flex flex-col justify-center;
   }
+  .p-section {
+    @apply px-2 md:px-4 py-8;
+  }
 }
 
 @layer components {
