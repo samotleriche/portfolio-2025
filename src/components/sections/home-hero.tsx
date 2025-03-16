@@ -8,8 +8,9 @@ function HomeHero() {
           Welcome,
         </h1>
         <p className="text-2xl ml-2 tracking-wide">
-          I'm Tomas Leriche, software engineer. Welcome to my small corner of
-          the internet.
+          {
+            "I'm Tomas Leriche, software engineer. Welcome to my small corner of the internet."
+          }
         </p>
       </div>
     </section>
