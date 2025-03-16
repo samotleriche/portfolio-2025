@@ -14,8 +14,8 @@ function Navbar() {
   const path = usePathname();
 
   return (
-    <header className="bg-[rgb(var(--background-dark)/0.75)] backdrop-blur-[10px] fixed h-[var(--h-navbar)] z-30 top-0 w-full border-b border-teal-950">
-      <div className="w-section px-2 md:px-4 h-full flex justify-between">
+    <header className="bg-[rgb(var(--background-dark)/0.75)] fixed h-[var(--h-navbar)] z-30 top-0 w-full border-b border-teal-950">
+      <div className="w-section px-2 md:px-4 h-full flex backdrop-blur-[10px] justify-between">
         <div className="flex justify-center items-center">
           <Link href="/">
             <TLLogo className="size-10 text-gray-300" />
