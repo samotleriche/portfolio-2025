@@ -1,6 +1,7 @@
 import React from "react";
+import { IconProps } from "./index";
 
-function GithubLogo({ className }: any) {
+function GithubLogo({ className }: IconProps) {
   return (
     <svg
       width="25"

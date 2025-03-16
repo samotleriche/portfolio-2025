@@ -1,6 +1,7 @@
 import React from "react";
+import { IconProps } from "./index";
 
-function LinkedInLogo({ className }: any) {
+function LinkedInLogo({ className }: IconProps) {
   return (
     <svg
       width="30"

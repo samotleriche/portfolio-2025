@@ -1,6 +1,7 @@
 import React from "react";
+import { IconProps } from "./index";
 
-function TLLogo({ className }: any) {
+function TLLogo({ className }: IconProps) {
   return (
     <svg
       width="300"

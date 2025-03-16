@@ -14,7 +14,7 @@ function Navbar() {
   const path = usePathname();
 
   return (
-    <header className="bg-[rgb(var(--background-dark)/0.75)] backdrop-blur-sm fixed h-[var(--h-navbar)] top-0 w-full border-b border-teal-950">
+    <header className="bg-[rgb(var(--background-dark)/0.75)] backdrop-blur-sm fixed h-[var(--h-navbar)] z-10 top-0 w-full border-b border-teal-950">
       <div className="w-section px-2 md:px-4 h-full flex justify-between">
         <div className="flex justify-center items-center">
           <Link href="/">
