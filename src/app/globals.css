@@ -41,7 +41,7 @@ body {
 
 @layer utilities {
   .w-section {
-    @apply max-w-4xl mx-auto;
+    @apply max-w-5xl mx-auto;
   }
   .h-section {
     @apply min-h-[calc(100vh_-_var(--h-navbar))] flex flex-col justify-center;
