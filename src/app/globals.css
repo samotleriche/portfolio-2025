@@ -49,6 +49,10 @@ body {
   .p-section {
     @apply px-2 md:px-4 py-8;
   }
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 }
 
 @layer components {
