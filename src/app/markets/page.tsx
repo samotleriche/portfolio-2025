@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 function Markets() {
   return (
     <div className="pt-[var(--h-navbar)] h-screen font-[family-name:var(--font-geist-sans)]">
-      <div className="w-section p-section">Markets</div>
+      <div className="w-section p-section">Markets coming soon!</div>
     </div>
   );
 }
