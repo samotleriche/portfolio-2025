@@ -38,7 +38,7 @@ export default function RootLayout({
         <Image
           priority
           src={radial}
-          className="absolute -top-[500px] left-1/2 -translate-x-1/2"
+          className="absolute -top-[550px] opacity-75 -z-10 left-1/2 -translate-x-1/2"
           alt="logo"
           width={1000}
           height={1000}

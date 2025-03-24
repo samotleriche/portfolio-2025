@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import React from "react";
+import Hero from "@/components/sections/blog/hero";
+import Blogs from "@/components/sections/blog/blogs";
 
 export const metadata: Metadata = {
   title: "Tomas Leriche | Blog",
@@ -8,8 +10,11 @@ export const metadata: Metadata = {
 
 function Blog() {
   return (
-    <div className="pt-[var(--h-navbar)] h-screen font-[family-name:var(--font-geist-sans)]">
-      <div className="w-section p-section">BLOG coming soon!</div>
+    <div className="pt-[var(--h-navbar)] font-[family-name:var(--font-geist-sans)]">
+      <main className="flex w-section justify-center items-center flex-col gap-8 row-start-2">
+        <Hero />
+        <Blogs />
+      </main>
     </div>
   );
 }
