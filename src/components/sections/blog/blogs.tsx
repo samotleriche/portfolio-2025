@@ -6,6 +6,9 @@ const filters = ["all", "finance", "software", "misc"];
 const blogData = [
   {
     title: "Lorem ipsum dolor sit amet",
+    key: "first-blog",
+    imgUrl:
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3JpdGluZ3xlbnwwfHwwfHx8MA%3D%3D",
     description:
       "nsequuntur asperiores ex omn uuntur asperiores ex omnis asdf asd i",
     category: "finance",
@@ -14,6 +17,9 @@ const blogData = [
   },
   {
     title: "Quaerat odit voluptate aspernatur",
+    key: "second-blog",
+    imgUrl:
+      "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d3JpdGluZ3xlbnwwfHwwfHx8MA%3D%3D",
     description:
       "nsequuntur asperiores ex omn uuntur asperiores ex omnis impedit, nam ducimus fugiat? Quaerat odit voluptate aspernatur. Quos minima totam fugiat!",
     category: "finance",
@@ -22,6 +28,9 @@ const blogData = [
   },
   {
     title: "Quos minima totam fugiat",
+    key: "third-blog",
+    imgUrl:
+      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d3JpdGluZ3xlbnwwfHwwfHx8MA%3D%3D",
     description:
       "nsequuntur asperiores ex omn uuntur asperiores ex omnis i uuntur asperiores ex omnis i",
     category: "finance",
