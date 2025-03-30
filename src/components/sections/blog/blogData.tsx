@@ -29,12 +29,11 @@ export const blogData: Record<
             <strong>very</strong>
           </em>{" "}
           long time. But as life would have it, something always came up that
-          took my mind off the task. I did manage to make a first attempt at a
-          portfolio website about 6 or 7 months ago but I went the route of
-          making it overly complex with animations and styles that eventually,
-          though it was ready to go live, it felt too much like an artistic
-          statement and I was no longer sure I like it. I wanted to start all
-          over.
+          took my mind off the task. I managed a first attempt at a portfolio
+          website about 6 or 7 months ago but I went the route of making it
+          overly complex with animations and styles. Eventually, it was ready to
+          go live, but it felt too much like an artistic statement and I was no
+          longer sure I liked it. I wanted to start all over.
         </p>
         <br />
         <p>
@@ -49,11 +48,10 @@ export const blogData: Record<
         <br />
         <p>
           I&apos;ve decided to use the tech that I both like using the most and
-          that also is the technology I have the most experience with. Namely,
-          Next.js -- which is a Meta framework for React. For styling I&apos;m
-          going with Tailwind, which is currently at version 4. As of right now,
-          that&apos;s really the only tech that&apos;s being used on the
-          website.
+          that I have the most experience with. Namely, Next.js -- which is a
+          Meta framework for React. For styling, I&apos;m going with Tailwind,
+          which recently just released version 4. As of right now, that&apos;s
+          really the only tech that&apos;s being used on the website.
         </p>
         <br />
         <p>
@@ -65,19 +63,20 @@ export const blogData: Record<
         <h3 className="text-gray-100 text-xl">Why a blog?</h3>
         <br />
         <p>
-          I wanted to include a blog feature/side of the website because
-          I&apos;m already in the habit of journaling on a regular basis so I
-          rather enjoy the writing process. After journaling for over a year, it
-          was insightful to be able to look back on my past thoughts and see how
-          I&apos;d changed and what I had accomplished. Writing down your
-          thoughts and goals can help hold you accountable.
+          I wanted to include a blog feature to the website because I&apos;m
+          already in the habit of journaling on a regular basis and I rather
+          enjoy the writing process. After journaling for this past year, it was
+          insightful to be able to look back on my thoughts and see how I&apos;d
+          changed and what I had accomplished. Writing down your thoughts and
+          goals can help hold you accountable.
         </p>
         <br />
         <p>
           A blog is also a great opportunity to make use of a lot of different
           features in Next.js like dynamic SEO and static page generation. It
           gives me a good opportunity to make a number of pages and possibly
-          even incorporate a CMS.
+          even incorporate a CMS. If I learn a new tool, I can also write about
+          it in addition to implementing it on the website.
         </p>
       </>
     ),
