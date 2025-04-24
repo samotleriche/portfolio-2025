@@ -27,14 +27,14 @@ function About() {
           <div className="flex justify-center items-center">
             <h1 className="flex flex-col gap-3">
               <div>
-                <span>Hi, I'm</span>{" "}
+                <span>Hi, I&apos;m</span>{" "}
                 <span className="bg-gradient-to-br from-teal-400 to-violet-500 bg-clip-text text-transparent">
                   Tomas Leriche!
                 </span>
               </div>
               <div>
                 <span>
-                  I'm a{" "}
+                  I&apos;m a{" "}
                   <span className="border-b-4 border-teal-500">
                     Senior Software Enginer
                   </span>{" "}
