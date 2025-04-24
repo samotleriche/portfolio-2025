@@ -5,3 +5,4 @@ export type IconProps = {
 export { default as GithubLogo } from "./GithubLogo";
 export { default as LinkedInLogo } from "./LinkedInLogo";
 export { default as TLLogo } from "./TLLogo";
+export { default as GradleLogo } from "./GradleLogo";
