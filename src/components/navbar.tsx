@@ -8,7 +8,7 @@ import LinkedInLogo from "./icons/LinkedInLogo";
 import GithubLogo from "./icons/GithubLogo";
 import TLLogo from "./icons/TLLogo";
 
-const navItems = ["About", "Blog", "Markets"];
+const navItems = ["About", "Blog", "Experiments"];
 
 function Navbar() {
   const path = usePathname();

@@ -14,9 +14,10 @@ export const metadata: Metadata = {
 function About() {
   return (
     <div className="pt-[var(--h-navbar)] h-screen font-[family-name:var(--font-geist-sans)]">
-      <div className="w-section p-section">
+      <div className="w-section p-section flex flex-col gap-10">
         <div className="relative justify-center flex gap-8">
           <div className="relative rounded-xl size-40">
+            <div className="absolute rounded-xl bg-gradient-to-br size-full inset-0 from-white from-10% to-35% to-transparent z-10"></div>
             <Image
               src={profile2}
               fill
@@ -46,6 +47,11 @@ function About() {
                 <GradleLogo className="size-10" />
               </div>
             </h1>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-8">
+          <div className="col-span-1 rounded-xl bg-gradient-to-br from-white to-gray-100 p-8">
+            asdf
           </div>
         </div>
       </div>

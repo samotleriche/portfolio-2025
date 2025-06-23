@@ -6,10 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@next/third-parties": "^15.2.3",
+    "@rive-app/react-canvas": "^4.21.3",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.82",
     "clsx": "^2.1.1",
@@ -19,14 +22,35 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
     "@eslint/eslintrc": "^3",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-onboarding": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/experimental-addon-test": "^8.6.14",
+    "@storybook/experimental-nextjs-vite": "^8.6.14",
+    "@storybook/nextjs": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/test": "^8.6.14",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/browser": "^3.1.4",
+    "@vitest/coverage-v8": "^3.1.4",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
+    "eslint-plugin-storybook": "^0.12.0",
+    "playwright": "^1.52.0",
+    "sass": "^1.89.0",
+    "storybook": "^8.6.14",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
