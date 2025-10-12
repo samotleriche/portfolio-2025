@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 function Experiments() {
   return (
-    <div className="pt-[var(--h-navbar)] h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="pt-[var(--h-navbar)] min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="w-section p-section">
         <div className="flex pb-4 flex-col gap-2">
           <h1 className="text-5xl">Experiments</h1>
@@ -28,10 +28,10 @@ function Experiments() {
           </p>
         </div>
         <div className="bg-violet-900 flex gap-10 p-8 rounded-3xl">
-          <div className="flex justify-start items-start h-[31rem] w-[31rem]">
+          <div className="h-[31rem] w-full">
             <Simple />
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex-1 flex flex-col gap-10">
             <h4 className="text-2xl">Example 1: Text follow path</h4>
             <p className="text-lg">Pretty fast to create</p>
           </div>

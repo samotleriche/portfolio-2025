@@ -10,7 +10,7 @@ export default function Simple() {
     src: "text_follow.riv",
     stateMachines: "State Machine 1",
     layout: new Layout({
-      fit: Fit.Contain, // Change to: rive.Fit.Contain, or Cover
+      fit: Fit.Layout, // Change to: rive.Fit.Contain, or Cover
       alignment: Alignment.Center,
     }),
     autoplay: true,
