@@ -217,10 +217,10 @@ function About() {
               About Me
             </h2>
             <p className="text-lg mb-8 text-gray-300 leading-relaxed">
-              I'm a Senior Software Engineer at Gradle Inc., where I contribute
-              to building Gradle.com. With extensive experience in both
-              leadership and technical roles, I've developed a strong foundation
-              in software development and architecture.
+              I&apos;m a Senior Software Engineer at Gradle Inc., where I
+              contribute to building Gradle.com. With extensive experience in
+              both leadership and technical roles, I&apos;ve developed a strong
+              foundation in software development and architecture.
             </p>
 
             <h3 className="text-xl font-semibold mb-4 text-teal-400">

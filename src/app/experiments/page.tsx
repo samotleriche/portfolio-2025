@@ -112,9 +112,9 @@ function Experiments() {
                 </h2>
               </div>
               <p className="text-gray-400 text-lg">
-                Interactive animations using Rive's powerful animation engine.
-                Creating smooth, performant animations that bring interfaces to
-                life.
+                Interactive animations using Rive&apos;s powerful animation
+                engine. Creating smooth, performant animations that bring
+                interfaces to life.
               </p>
             </div>
 
@@ -137,9 +137,9 @@ function Experiments() {
                   </h3>
                   <p className="text-gray-400 leading-relaxed">
                     A smooth text animation that follows a curved path,
-                    demonstrating Rive's powerful path animation capabilities.
-                    Perfect for creating engaging hero sections and interactive
-                    elements.
+                    demonstrating Rive&apos;s powerful path animation
+                    capabilities. Perfect for creating engaging hero sections
+                    and interactive elements.
                   </p>
                 </div>
 
@@ -180,9 +180,9 @@ function Experiments() {
                 More Experiments Coming Soon
               </h3>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                I'm constantly experimenting with new technologies and creative
-                ideas. Check back soon for more interactive experiences, 3D
-                animations, and innovative web experiments.
+                I&apos;m constantly experimenting with new technologies and
+                creative ideas. Check back soon for more interactive
+                experiences, 3D animations, and innovative web experiments.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-6">
                 <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-sm border border-teal-400/30">

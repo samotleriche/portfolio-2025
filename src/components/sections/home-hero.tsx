@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -35,7 +36,6 @@ import Simple from "../sections/experiments/simplespline";
 
 function HomeHero() {
   const bentoRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
   // Get the latest blog post
   const getLatestBlogPost = () => {
@@ -135,9 +135,9 @@ function HomeHero() {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 w-full"
           >
             {/* Large Hero Card - About */}
-            <div
-              className="sm:col-span-2 md:col-span-2 lg:col-span-4 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 via-teal-500/5 to-violet-500/10 border border-teal-400/20 p-6 sm:p-8 hover:border-teal-400/50 hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1"
-              onClick={() => (window.location.href = "/about")}
+            <Link
+              href="/about"
+              className="sm:col-span-2 md:col-span-2 lg:col-span-4 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 via-teal-500/5 to-violet-500/10 border border-teal-400/20 p-6 sm:p-8 hover:border-teal-400/50 hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1 block"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-teal-400/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -182,7 +182,7 @@ function HomeHero() {
               <div className="absolute top-6 right-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-400/15 to-violet-400/15 border border-teal-400/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400/25 to-violet-400/25 border border-teal-400/35 group-hover:border-teal-400/50 transition-all duration-300"></div>
               </div>
-            </div>
+            </Link>
 
             {/* Skills Card */}
             <div className="sm:col-span-1 md:col-span-2 lg:col-span-2 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 to-violet-500/10 border border-teal-400/20 p-4 sm:p-6 hover:border-teal-400/50 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1">
@@ -249,9 +249,9 @@ function HomeHero() {
             </div>
 
             {/* Blog Card */}
-            <div
-              className="sm:col-span-1 md:col-span-2 lg:col-span-2 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-500/10 to-teal-500/10 border border-violet-400/20 p-4 sm:p-6 hover:border-violet-400/50 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1"
-              onClick={() => (window.location.href = "/blog")}
+            <Link
+              href="/blog"
+              className="sm:col-span-1 md:col-span-2 lg:col-span-2 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-500/10 to-teal-500/10 border border-violet-400/20 p-4 sm:p-6 hover:border-violet-400/50 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1 block"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 flex flex-col items-center text-center h-full justify-between">
@@ -271,13 +271,13 @@ function HomeHero() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Latest Blog Post Card */}
             {latestPost && (
-              <div
-                className="sm:col-span-2 md:col-span-2 lg:col-span-4 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-500/10 to-teal-500/10 border border-violet-400/20 p-4 sm:p-6 hover:border-violet-400/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1"
-                onClick={() => (window.location.href = latestPost.href)}
+              <Link
+                href={latestPost.href}
+                className="sm:col-span-2 md:col-span-2 lg:col-span-4 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-500/10 to-teal-500/10 border border-violet-400/20 p-4 sm:p-6 hover:border-violet-400/50 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1 block"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-400/5 to-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -328,13 +328,13 @@ function HomeHero() {
                 <div className="absolute top-6 right-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400/15 to-teal-400/15 border border-violet-400/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                   <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-400/25 to-teal-400/25 border border-violet-400/35 group-hover:border-violet-400/50 transition-all duration-300"></div>
                 </div>
-              </div>
+              </Link>
             )}
 
             {/* Experiments Card */}
-            <div
-              className="sm:col-span-1 md:col-span-2 lg:col-span-2 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 to-violet-500/10 border border-teal-400/20 p-4 sm:p-6 hover:border-teal-400/50 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1"
-              onClick={() => (window.location.href = "/experiments")}
+            <Link
+              href="/experiments"
+              className="sm:col-span-1 md:col-span-2 lg:col-span-2 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 to-violet-500/10 border border-teal-400/20 p-4 sm:p-6 hover:border-teal-400/50 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1 block"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 flex flex-col items-center text-center h-full justify-between">
@@ -354,13 +354,13 @@ function HomeHero() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Latest Experiment Card */}
             {latestExperiment && (
-              <div
-                className="sm:col-span-2 md:col-span-2 lg:col-span-4 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 to-violet-500/10 border border-teal-400/20 p-4 sm:p-6 hover:border-teal-400/50 hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1"
-                onClick={() => (window.location.href = latestExperiment.href)}
+              <Link
+                href={latestExperiment.href}
+                className="sm:col-span-2 md:col-span-2 lg:col-span-4 bento-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500/10 to-violet-500/10 border border-teal-400/20 p-4 sm:p-6 hover:border-teal-400/50 hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1 block"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-400/5 to-violet-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -424,7 +424,7 @@ function HomeHero() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             )}
 
             {/* Contact Card */}
@@ -445,8 +445,8 @@ function HomeHero() {
                   </h3>
                 </div>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                  Let's collaborate on your next project or just chat about web
-                  development.
+                  Let&apos;s collaborate on your next project or just chat about
+                  web development.
                 </p>
                 <div className="flex items-center gap-3 text-violet-400 group-hover:text-violet-300 transition-colors duration-300">
                   <span className="font-semibold text-sm">Send Email</span>
