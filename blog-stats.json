@@ -1,0 +1,46 @@
+{
+  "totalPosts": 3,
+  "publishedPosts": 3,
+  "draftPosts": 0,
+  "featuredPosts": 0,
+  "categories": {
+    "finance": 1,
+    "software": 1,
+    "misc": 1
+  },
+  "tags": {},
+  "totalReadingTime": 2.0100000000000002,
+  "averageReadingTime": 0.67,
+  "posts": [
+    {
+      "title": "My first blog post",
+      "category": "finance",
+      "date": "2025-03-29",
+      "draft": false,
+      "featured": false,
+      "tags": [],
+      "readingTime": 1.87,
+      "wordCount": 374
+    },
+    {
+      "title": "Another great blog post",
+      "category": "software",
+      "date": "2021-10-01",
+      "draft": false,
+      "featured": false,
+      "tags": [],
+      "readingTime": 0.07,
+      "wordCount": 14
+    },
+    {
+      "title": "Third blog post is a really long title that says too many things",
+      "category": "misc",
+      "date": "2021-10-01",
+      "draft": false,
+      "featured": false,
+      "tags": [],
+      "readingTime": 0.07,
+      "wordCount": 14
+    }
+  ]
+}

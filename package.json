@@ -8,22 +8,31 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "blog:create": "node scripts/create-blog-post.js",
+    "blog:validate": "node scripts/validate-blog-posts.js",
+    "blog:stats": "node scripts/blog-stats.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^15.5.4",
     "@next/third-parties": "^15.2.3",
     "@rive-app/react-canvas": "^4.21.3",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.82",
     "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
     "lucide-react": "^0.483.0",
+    "marked": "^16.4.0",
     "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "reading-time": "^1.5.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
@@ -37,6 +46,7 @@
     "@storybook/react": "^8.6.14",
     "@storybook/test": "^8.6.14",
     "@tailwindcss/postcss": "^4",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

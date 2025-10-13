@@ -6,13 +6,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { Filter, BookOpen } from "lucide-react";
 import BlogCard from "@/components/ui/BlogCard";
-import { blogData } from "@/components/sections/blog/blogData";
 
-const filters = ["all", "finance", "software", "misc"];
+interface BlogsProps {
+  posts: Array<{
+    slug: string;
+    title: string;
+    description: string;
+    category: string;
+    date: string;
+    imgUrl: string;
+    href: string;
+    readingTime: string;
+  }>;
+}
 
-function Blogs() {
+function Blogs({ posts }: BlogsProps) {
   const filtersRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+
+  // Use provided posts from server-side
+  const allPosts = posts;
+  const categories = [...new Set(posts.map((post) => post.category))];
+  const filters = ["all", ...categories];
 
   return (
     <div className="flex flex-col gap-8 w-full">
@@ -50,8 +65,16 @@ function Blogs() {
         ref={cardsRef}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {Object.entries(blogData).map(([key, blog]) => (
-          <BlogCard {...blog} key={key} />
+        {allPosts.map((blog) => (
+          <BlogCard
+            title={blog.title}
+            imgUrl={blog.imgUrl}
+            description={blog.description}
+            category={blog.category}
+            date={blog.date}
+            href={blog.href}
+            key={blog.slug}
+          />
         ))}
       </div>
     </div>

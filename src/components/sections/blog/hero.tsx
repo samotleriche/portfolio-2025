@@ -6,20 +6,10 @@ type HeroProps = {
   supertitle: string;
   title: string;
   description: string;
-  date?: string;
   heroImage?: string;
 };
 
-function Hero({ supertitle, title, description, date, heroImage }: HeroProps) {
-  const formattedDate = new Date(date ?? "1990-08-19 PST").toLocaleDateString(
-    "en-US",
-    {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-  );
-
+function Hero({ supertitle, title, description, heroImage }: HeroProps) {
   return (
     <div className="relative flex flex-col items-center text-center space-y-8">
       {/* Icon with glow effect */}
@@ -32,33 +22,26 @@ function Hero({ supertitle, title, description, date, heroImage }: HeroProps) {
 
       {/* Content */}
       <div className="space-y-6 max-w-4xl">
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div className="flex items-center justify-center gap-2 text-violet-400 uppercase text-sm font-semibold tracking-wider">
             <PenTool className="w-4 h-4" />
             {supertitle}
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-bold">
+          <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-violet-400 via-teal-500 to-violet-400 bg-clip-text text-transparent animate-gradient">
               {title}
             </span>
           </h1>
 
-          <p className="text-xl lg:text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
             {description}
           </p>
-
-          {date && (
-            <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
-              <span className="w-2 h-2 bg-violet-400 rounded-full"></span>
-              {formattedDate}
-            </p>
-          )}
         </div>
       </div>
 
       {heroImage && (
-        <div className="relative group">
+        <div className="relative group mt-8">
           <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-violet-500/20 to-teal-500/20 blur-lg group-hover:blur-xl transition-all duration-500"></div>
           <div className="relative rounded-2xl overflow-hidden border border-gray-700/50 group-hover:border-violet-400/60 transition-all duration-500">
             <Image
@@ -66,7 +49,7 @@ function Hero({ supertitle, title, description, date, heroImage }: HeroProps) {
               alt="hero"
               width={700}
               height={200}
-              className="h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+              className="h-64 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/20"></div>
           </div>
