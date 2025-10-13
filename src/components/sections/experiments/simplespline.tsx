@@ -10,7 +10,7 @@ export default function Simple() {
     src: "text_follow.riv",
     stateMachines: "State Machine 1",
     layout: new Layout({
-      fit: Fit.Layout, // Change to: rive.Fit.Contain, or Cover
+      fit: Fit.Contain, // Changed to Contain for better scaling
       alignment: Alignment.Center,
     }),
     autoplay: true,
@@ -18,8 +18,9 @@ export default function Simple() {
 
   return (
     <RiveComponent
-    // onMouseEnter={() => rive && rive.play()}
-    // onMouseLeave={() => rive && rive.pause()}
+      style={{ width: "100%", height: "100%" }}
+      // onMouseEnter={() => rive && rive.play()}
+      // onMouseLeave={() => rive && rive.pause()}
     />
   );
 }

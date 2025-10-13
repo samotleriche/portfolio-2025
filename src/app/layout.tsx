@@ -5,7 +5,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.scss";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import radial from "./../../public/radial-green.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,14 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}
       >
         <Navbar />
-        <Image
-          priority
-          src={radial}
-          className="absolute -top-[550px] opacity-75 -z-10 left-1/2 -translate-x-1/2"
-          alt="logo"
-          width={1000}
-          height={1000}
-        />
+
         {children}
         <Footer />
       </body>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Calendar, Tag, ArrowRight } from "lucide-react";
 
 type BlogCardProps = {
   href: string;
@@ -26,23 +27,54 @@ function BlogCard({
   });
 
   return (
-    <Link href={href} className="flex rounded-2xl group flex-col pb-4 gap-4">
-      <div className="bg-gray-700 h-80 group-hover:outline-violet-400 outline outline-transparent transition-colors duration-300 rounded-2xl  relative">
+    <Link
+      href={href}
+      className="group block rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-violet-500/50 hover:bg-gray-800/70 transition-all duration-300 overflow-hidden"
+    >
+      {/* Image Container */}
+      <div className="relative h-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-teal-500/20 z-10"></div>
         <Image
-          className="inset-0 border border-gray-500 object-cover rounded-2xl"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           src={imgUrl}
           alt={title}
           fill
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
         />
-        <div className="inset-0 bg-gradient-to-b from-gray-500 to-gray-500/0 z-10"></div>
-      </div>
-      <div className="flex flex-col gap-1">
-        <div className="flex text-gray-400 gap-1">
-          <p>{formattedDate}</p>-<p>{category}</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/60 z-20"></div>
+
+        {/* Category Badge */}
+        <div className="absolute top-4 left-4 z-30">
+          <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-violet-500/20 backdrop-blur-sm border border-violet-400/30 text-violet-300 text-xs font-medium">
+            <Tag className="w-3 h-3" />
+            {category}
+          </span>
         </div>
-        <h2 className="text-2xl line-clamp-2">{title}</h2>
-        <p className="text-gray-400 line-clamp-3">{description}</p>
+      </div>
+
+      {/* Content */}
+      <div className="p-6 space-y-4">
+        {/* Date */}
+        <div className="flex items-center gap-2 text-gray-400 text-sm">
+          <Calendar className="w-4 h-4" />
+          <span>{formattedDate}</span>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-xl font-bold text-white group-hover:text-violet-300 transition-colors duration-300 line-clamp-2">
+          {title}
+        </h2>
+
+        {/* Description */}
+        <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+          {description}
+        </p>
+
+        {/* Read More */}
+        <div className="flex items-center gap-2 text-violet-400 group-hover:text-violet-300 transition-colors duration-300">
+          <span className="text-sm font-medium">Read more</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        </div>
       </div>
     </Link>
   );

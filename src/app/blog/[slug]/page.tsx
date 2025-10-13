@@ -43,7 +43,7 @@ async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
 
   return (
     <div className="pt-[var(--h-navbar)] font-[family-name:var(--font-geist-sans)]">
-      <main className="flex w-section justify-center items-center flex-col gap-8 row-start-2">
+      <main className="flex w-section p-section justify-center items-center flex-col gap-8 row-start-2">
         <div className="flex flex-col items-center gap-14 pb-20 w-full">
           <Hero
             supertitle="Personal blog"
