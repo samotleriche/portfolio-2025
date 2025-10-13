@@ -16,6 +16,7 @@
     "@rive-app/react-canvas": "^4.21.3",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.82",
+    "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
     "lucide-react": "^0.483.0",

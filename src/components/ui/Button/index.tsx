@@ -6,7 +6,7 @@ type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
 type ButtonProps = {
-  text: string;
+  text?: string;
   href?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -55,7 +55,7 @@ function Button({
     className
   );
 
-  const buttonContent = children || text;
+  const buttonContent = children || text || "Button";
 
   if (href) {
     return (
