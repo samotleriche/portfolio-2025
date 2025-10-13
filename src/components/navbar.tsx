@@ -121,6 +121,20 @@ function Navbar() {
           <div className="relative w-section px-section py-8">
             {/* Navigation Links */}
             <div className="space-y-4 mb-8">
+              {/* Home Link */}
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className={clsx(
+                  "block px-6 py-4 rounded-xl text-lg font-semibold transition-all duration-300",
+                  path === "/"
+                    ? "bg-teal-500/20 border border-teal-400/40 text-teal-300"
+                    : "bg-gray-800/30 border border-gray-700/30 text-gray-300 hover:bg-teal-500/20 hover:border-teal-400/40 hover:text-white"
+                )}
+              >
+                Home
+              </Link>
+
               {navItems.map((item, idx) => (
                 <Link
                   key={`${item}-${idx}`}
