@@ -1,16 +1,9 @@
 "use client";
 
-import {
-  useRive,
-  useViewModel,
-  Layout,
-  Fit,
-  Alignment,
-} from "@rive-app/react-webgl2";
-import { useEffect, useRef } from "react";
+import { useRive, Layout, Fit, Alignment } from "@rive-app/react-webgl2";
 
 export default function AnimatedAvatar() {
-  const { rive, RiveComponent } = useRive({
+  const { RiveComponent } = useRive({
     src: "/animatedavatarcomp.riv",
     stateMachines: "State Machine 1",
     artboard: "pfpchar",
@@ -22,13 +15,8 @@ export default function AnimatedAvatar() {
     autoBind: true,
   });
 
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div
-      ref={containerRef}
-      style={{ width: "100%", height: "100%", cursor: "pointer" }}
-    >
+    <div style={{ width: "100%", height: "100%", cursor: "pointer" }}>
       <RiveComponent style={{ width: "100%", height: "100%" }} />
     </div>
   );
