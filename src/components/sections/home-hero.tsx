@@ -33,6 +33,7 @@ import { blogData } from "../sections/blog/blogData";
 import { experimentData } from "../sections/experiments/experimentData";
 import profilePic from "../../app/about/profilePic.jpg";
 import Simple from "../sections/experiments/simplespline";
+import AnimatedAvatar from "../animated-avatar";
 
 function HomeHero() {
   const bentoRef = useRef<HTMLDivElement>(null);
@@ -121,12 +122,22 @@ function HomeHero() {
               <Sparkles className="w-4 h-4" />
               Currently exploring AI tools & Rive animations
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-teal-400 via-violet-500 to-teal-400 bg-clip-text text-transparent mb-4">
-              Tomas Leriche
-            </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Senior Software Engineer crafting immersive digital experiences
-            </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-4">
+              {/* Animated Avatar */}
+              <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 flex-shrink-0 relative overflow-hidden">
+                <AnimatedAvatar />
+              </div>
+              {/* Title and Description */}
+              <div className="flex flex-col items-center md:items-start">
+                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-teal-400 via-violet-500 to-teal-400 bg-clip-text text-transparent mb-4">
+                  Tomas Leriche
+                </h1>
+                <p className="text-lg text-gray-400 max-w-2xl text-center md:text-left">
+                  Senior Software Engineer crafting immersive digital
+                  experiences
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Bento Grid */}
