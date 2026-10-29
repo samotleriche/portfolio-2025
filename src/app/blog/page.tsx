@@ -1,26 +1,40 @@
-import React from "react";
-import { getAllBlogPosts } from "@/lib/blog-server";
-import Hero from "@/components/sections/blog/hero";
-import BlogsWithAnimations from "@/components/sections/blog/BlogsWithAnimations";
+import type { Metadata } from "next";
+import Link from "next/link";
+import PageHeader from "@/components/site/page-header";
+import WritingList, { type WritingPost } from "@/components/blog/writing-list";
+import { getPublishedPosts } from "@/lib/blog-server";
 
-async function Blog() {
-  // Fetch blog posts from MDX files server-side
-  const posts = getAllBlogPosts();
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Notes by Tomas Leriche on software, motion, and whatever is worth keeping.",
+};
+
+export default function BlogPage() {
+  const posts: WritingPost[] = getPublishedPosts().map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    category: post.category,
+    date: post.date,
+    href: post.href,
+    readingTime: post.readingTime,
+    tags: post.tags,
+    featured: post.featured,
+  }));
 
   return (
-    <div className="pt-[var(--h-navbar)] min-h-screen font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="w-section p-section flex flex-col gap-16">
-        <div>
-          <Hero
-            supertitle="Personal blog"
-            title="Welcome to my blog!"
-            description="A collection of thoughts and ideas about software engineering, creative development, and emerging technologies."
-          />
-        </div>
-        <BlogsWithAnimations posts={posts} />
+    <div className="w-section py-16 md:py-24">
+      <div className="flex flex-wrap items-end justify-between gap-6">
+        <PageHeader eyebrow="Notebook" title="Writing">
+          Notes on software, motion, and whatever is worth keeping. I publish a
+          piece when it’s finished.
+        </PageHeader>
+        <Link href="/feed.xml" className="text-sm text-muted hover:text-ink">
+          RSS
+        </Link>
       </div>
+      <WritingList posts={posts} />
     </div>
   );
 }
-
-export default Blog;

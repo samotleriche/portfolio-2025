@@ -1,151 +1,178 @@
-import React, { Suspense } from "react";
-import { Metadata, ResolvingMetadata } from "next";
+import React from "react";
+import type { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { marked } from "marked";
-import Hero from "@/components/sections/blog/hero";
-import { getBlogPost, getBlogPostMetadata } from "@/lib/blog-server";
-import ErrorBoundary from "@/components/ui/ErrorBoundary";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import {
+  getBlogPost,
+  getBlogSlugs,
+  getRelatedPosts,
+} from "@/lib/blog-server";
+import { extractHeadings, renderMarkdown } from "@/lib/markdown";
+import { formatCategory, formatDate } from "@/lib/format";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export function generateStaticParams() {
+  return getBlogSlugs().map((slug) => ({ slug }));
+}
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { slug } = await params;
-
-  // optionally access and extend (rather than replace) parent metadata
+  const blog = getBlogPost(slug);
   const previousImages = (await parent).openGraph?.images || [];
 
-  const blog = getBlogPostMetadata(slug);
-
   if (!blog) {
-    return {
-      title: "Blog Post Not Found | Tomas Leriche",
-      description: "The requested blog post could not be found.",
-    };
+    return { title: "Not found" };
   }
 
   return {
-    title: blog.title + " | Tomas Leriche",
+    title: blog.title,
     description: blog.description,
+    robots: blog.draft ? { index: false, follow: false } : undefined,
     openGraph: {
       title: blog.title,
       description: blog.description,
-      images: [
-        ...previousImages,
-        {
-          url: blog.imgUrl,
-          width: 800,
-          height: 600,
-        },
-      ],
+      type: "article",
+      publishedTime: blog.date,
+      images: blog.imgUrl
+        ? [
+            ...previousImages,
+            { url: blog.imgUrl, width: 800, height: 600, alt: blog.title },
+          ]
+        : previousImages,
     },
   };
 }
 
-async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
+  const post = getBlogPost(slug);
 
-  const blog = getBlogPost(slug);
+  if (!post) notFound();
 
-  if (!blog) {
-    notFound();
-  }
+  const headings = extractHeadings(post.content, post.title);
+  const html = renderMarkdown(post.content, post.title);
+  const related = post.draft ? [] : getRelatedPosts(slug);
+  const showToc = headings.length >= 2;
 
   return (
-    <div className="pt-[var(--h-navbar)] font-[family-name:var(--font-geist-sans)] min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <main className="flex w-section p-section justify-center items-start flex-col gap-12 row-start-2">
-        {/* Hero Section */}
-        <div className="w-full">
-          <ErrorBoundary>
-            <Suspense fallback={<LoadingSpinner size="lg" className="py-8" />}>
-              <Hero
-                supertitle="Personal blog"
-                title={blog.title}
-                description={blog.description}
-                heroImage={blog.imgUrl}
+    <div className="w-section py-12 md:py-20">
+      <div className="mx-auto grid w-full max-w-[42rem] lg:max-w-5xl lg:grid-cols-[minmax(0,42rem)_13rem] lg:gap-x-14">
+        <div>
+          <Link href="/blog" className="text-sm text-muted hover:text-ink">
+            ← Writing
+          </Link>
+
+          {post.draft ? (
+            <p className="mt-8 rounded-2xl border border-line bg-accent-soft px-4 py-3 text-sm leading-relaxed text-ink">
+              Draft. This page isn’t on the writing index or in the feed. Set{" "}
+              <code className="font-mono">draft: false</code> in the frontmatter
+              when it’s ready.
+            </p>
+          ) : null}
+
+          <header className="mt-10">
+            <p className="text-sm text-accent">
+              {formatCategory(post.category)}
+              <span className="text-faint">
+                {" "}
+                · {formatDate(post.date)} · {post.readingTime}
+              </span>
+            </p>
+            <h1 className="mt-4 font-serif text-[clamp(2.6rem,5vw,4.4rem)] leading-[1.02] font-medium tracking-[-0.03em]">
+              {post.title}
+            </h1>
+            <p className="mt-6 text-xl leading-relaxed text-muted">
+              {post.description}
+            </p>
+          </header>
+
+          {post.imgUrl ? (
+            <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl bg-surface">
+              <Image
+                src={post.imgUrl}
+                alt=""
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 768px) 672px, 100vw"
               />
-            </Suspense>
-          </ErrorBoundary>
+            </div>
+          ) : null}
+
+          <article
+            className="essay mt-12"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+
+          <footer className="mt-16 border-t border-line pt-8">
+            {post.tags.length > 0 ? (
+              <ul className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <li
+                    key={tag}
+                    className="rounded-full border border-line px-3 py-1 text-xs text-muted"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            <p className="mt-6 text-sm text-faint">Written by {post.author}.</p>
+
+            {related.length > 0 ? (
+              <div className="mt-10">
+                <p className="text-[0.72rem] font-medium tracking-[0.18em] text-faint uppercase">
+                  More writing
+                </p>
+                <ul className="mt-4">
+                  {related.map((item) => (
+                    <li key={item.slug} className="border-t border-line py-4">
+                      <Link
+                        href={item.href}
+                        className="font-serif text-2xl tracking-tight hover:text-accent"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </footer>
         </div>
 
-        {/* Blog Metadata */}
-        <div className="w-full max-w-4xl mx-auto">
-          <div className="flex flex-wrap items-center justify-center gap-6 py-6 px-8 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-sm">
-            <div className="flex items-center gap-2 text-sm text-gray-300">
-              <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
-              <span>
-                {new Date(blog.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-300">
-              <div className="w-2 h-2 bg-teal-400 rounded-full"></div>
-              <span>
-                {Math.ceil(blog.content.split(" ").length / 200)} min read
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-300">
-              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-              <span className="capitalize">{blog.category || "General"}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog Content */}
-        <div className="w-full max-w-4xl mx-auto">
-          <ErrorBoundary>
-            <Suspense
-              fallback={
-                <div className="space-y-6">
-                  <div className="h-4 bg-gray-700 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gray-700 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gray-700 rounded w-3/4 animate-pulse"></div>
-                  <div className="h-8 bg-gray-700 rounded w-1/2 animate-pulse mt-8"></div>
-                  <div className="h-4 bg-gray-700 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gray-700 rounded animate-pulse"></div>
-                </div>
-              }
-            >
-              <article
-                className="prose prose-lg prose-invert prose-violet max-w-none 
-                 prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight
-                 prose-h1:text-4xl prose-h1:mb-8 prose-h1:mt-12 prose-h1:first:mt-0
-                 prose-h2:text-3xl prose-h2:mb-8 prose-h2:mt-12 prose-h2:first:mt-0
-                 prose-h3:text-2xl prose-h3:mb-6 prose-h3:mt-10 prose-h3:first:mt-0
-                 prose-h4:text-xl prose-h4:mb-4 prose-h4:mt-8 prose-h4:first:mt-0
-                 prose-p:text-gray-200 prose-p:leading-relaxed prose-p:mb-6 prose-p:mt-0
-                 prose-strong:text-white prose-strong:font-semibold
-                 prose-em:text-violet-300 prose-em:italic
-                 prose-a:text-violet-400 prose-a:no-underline hover:prose-a:text-violet-300 hover:prose-a:underline
-                 prose-blockquote:border-l-violet-500 prose-blockquote:bg-gray-800/30 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:my-8
-                 prose-code:text-violet-300 prose-code:bg-gray-800/50 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
-                 prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-700 prose-pre:rounded-lg prose-pre:my-8
-                 prose-ul:space-y-2 prose-ol:space-y-2 prose-ul:my-6 prose-ol:my-6
-                 prose-li:text-gray-200 prose-li:leading-relaxed
-                 prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8
-                 prose-hr:border-gray-700 prose-hr:my-12"
-              >
-                <div
-                  dangerouslySetInnerHTML={{ __html: marked(blog.content) }}
-                />
-              </article>
-            </Suspense>
-          </ErrorBoundary>
-        </div>
-
-        {/* Bottom Spacing */}
-        <div className="pb-20"></div>
-      </main>
+        {showToc ? (
+          <aside className="hidden self-start lg:sticky lg:top-28 lg:mt-16 lg:block">
+            <nav className="sticky top-28" aria-label="On this page">
+              <p className="text-[0.72rem] font-medium tracking-[0.18em] text-faint uppercase">
+                On this page
+              </p>
+              <ul className="mt-4 space-y-2">
+                {headings.map((heading) => (
+                  <li
+                    key={heading.id}
+                    className={heading.depth === 3 ? "pl-3" : undefined}
+                  >
+                    <a
+                      href={`#${heading.id}`}
+                      className="text-sm leading-snug text-muted hover:text-ink"
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        ) : null}
+      </div>
     </div>
   );
 }
-
-export default BlogPage;

@@ -9,7 +9,7 @@ export async function GET(
     const { slug } = await params;
     const post = getBlogPost(slug);
 
-    if (!post) {
+    if (!post || post.draft) {
       return NextResponse.json(
         { error: "Blog post not found" },
         { status: 404 }

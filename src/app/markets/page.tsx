@@ -1,18 +1,27 @@
-import { Metadata } from "next";
-import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import PageHeader from "@/components/site/page-header";
 
 export const metadata: Metadata = {
-  title: "Tomas Leriche | Markets",
+  title: "Markets",
   description:
-    "Exploring the markets and the world of finance through the lens of a software engineer.",
+    "A notebook on markets, still blank, by Tomas Leriche.",
 };
 
-function Markets() {
+export default function MarketsPage() {
   return (
-    <div className="pt-[var(--h-navbar)] h-screen font-[family-name:var(--font-geist-sans)]">
-      <div className="w-section p-section">Markets coming soon!</div>
+    <div className="w-section py-16 md:py-24">
+      <PageHeader eyebrow="Parked" title="Markets">
+        I want a place to think about markets in public. There isn’t a post
+        here yet, and I don’t want a placeholder pretending otherwise.
+      </PageHeader>
+      <p className="mt-10 text-muted">
+        When something is ready, it will show up in{" "}
+        <Link href="/blog" className="text-accent">
+          Writing
+        </Link>
+        .
+      </p>
     </div>
   );
 }
-
-export default Markets;
