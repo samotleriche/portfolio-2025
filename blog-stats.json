@@ -1,19 +1,29 @@
 {
-  "totalPosts": 3,
-  "publishedPosts": 3,
+  "totalPosts": 4,
+  "publishedPosts": 4,
   "draftPosts": 0,
   "featuredPosts": 0,
   "categories": {
-    "finance": 1,
+    "finance": 2,
     "software": 1,
     "misc": 1
   },
   "tags": {},
-  "totalReadingTime": 2.0100000000000002,
-  "averageReadingTime": 0.67,
+  "totalReadingTime": 3.88,
+  "averageReadingTime": 0.97,
   "posts": [
     {
       "title": "My first blog post",
+      "category": "finance",
+      "date": "2025-03-29",
+      "draft": false,
+      "featured": false,
+      "tags": [],
+      "readingTime": 1.87,
+      "wordCount": 374
+    },
+    {
+      "title": "My 4 blog post",
       "category": "finance",
       "date": "2025-03-29",
       "draft": false,
