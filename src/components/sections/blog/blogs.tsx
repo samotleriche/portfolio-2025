@@ -1,9 +1,3 @@
-import React, { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
 import { Filter, BookOpen } from "lucide-react";
 import BlogCard from "@/components/ui/BlogCard";
 
@@ -21,9 +15,6 @@ interface BlogsProps {
 }
 
 function Blogs({ posts }: BlogsProps) {
-  const filtersRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
   // Use provided posts from server-side
   const allPosts = posts;
   const categories = [...new Set(posts.map((post) => post.category))];
@@ -44,10 +35,7 @@ function Blogs({ posts }: BlogsProps) {
 
       {/* Filters */}
       <div className="flex justify-center">
-        <div
-          ref={filtersRef}
-          className="flex items-center gap-2 p-2 rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50"
-        >
+        <div className="flex items-center gap-2 p-2 rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
           <Filter className="w-4 h-4 text-violet-400" />
           {filters.map((filter) => (
             <button
@@ -61,10 +49,7 @@ function Blogs({ posts }: BlogsProps) {
       </div>
 
       {/* Blog Cards Grid */}
-      <div
-        ref={cardsRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allPosts.map((blog) => (
           <BlogCard
             title={blog.title}

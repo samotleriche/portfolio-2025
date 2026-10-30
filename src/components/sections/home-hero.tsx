@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import AnimatedAvatar from "@/components/animated-avatar";
+import RevealHeading from "@/components/site/heading-reveal";
 import { site } from "@/lib/site";
 
 export default function HomeHero() {
@@ -24,11 +25,12 @@ export default function HomeHero() {
           <p className="text-[0.72rem] font-medium tracking-[0.22em] text-accent uppercase">
             {site.location}
           </p>
-          <h1 className="mt-5 font-serif text-[clamp(4.2rem,10vw,7.4rem)] leading-[0.86] font-medium tracking-[-0.04em]">
-            Tomas
-            <br />
-            Leriche
-          </h1>
+          <RevealHeading
+            by="line"
+            rule
+            text={"Tomas\nLeriche"}
+            className="mt-5 font-serif text-[clamp(4.2rem,10vw,7.4rem)] leading-[0.86] font-medium tracking-[-0.04em]"
+          />
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
             {site.role} at {site.company}. I build for the web, and I like when
             it moves.

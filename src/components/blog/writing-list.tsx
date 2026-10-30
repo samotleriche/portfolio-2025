@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { formatCategory, formatDate } from "@/lib/format";
+import RevealHeading from "@/components/site/heading-reveal";
 
 export type WritingPost = {
   slug: string;
@@ -89,9 +90,11 @@ export default function WritingList({ posts }: { posts: WritingPost[] }) {
             {formatCategory(featured.category)} · {formatDate(featured.date)} ·{" "}
             {featured.readingTime}
           </p>
-          <h2 className="mt-3 font-serif text-4xl tracking-tight transition-colors group-hover:text-accent md:text-5xl">
-            {featured.title}
-          </h2>
+          <RevealHeading
+            as="h2"
+            text={featured.title}
+            className="mt-3 font-serif text-4xl tracking-tight transition-colors group-hover:text-accent md:text-5xl"
+          />
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
             {featured.description}
           </p>

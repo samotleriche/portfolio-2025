@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RevealHeading from "@/components/site/heading-reveal";
 
 export default function NotFound() {
   return (
@@ -6,9 +7,11 @@ export default function NotFound() {
       <p className="text-[0.72rem] font-medium tracking-[0.22em] text-accent uppercase">
         404
       </p>
-      <h1 className="mt-4 max-w-xl font-serif text-5xl leading-[0.95] tracking-tight md:text-7xl">
-        That page isn’t here.
-      </h1>
+      <RevealHeading
+        rule
+        text="That page isn’t here."
+        className="mt-4 max-w-xl font-serif text-5xl leading-[0.95] tracking-tight md:text-7xl"
+      />
       <p className="mt-6 max-w-md text-lg text-muted">
         The link may be old, or the note may still be a draft.
       </p>

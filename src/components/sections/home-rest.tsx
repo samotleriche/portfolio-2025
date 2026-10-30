@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import RevealHeading from "@/components/site/heading-reveal";
 import { now, projects, site } from "@/lib/site";
 import { formatCategory, formatDate } from "@/lib/format";
 import type { BlogListItem } from "@/lib/blog-server";
@@ -13,9 +14,12 @@ export default function HomeRest({ latest }: { latest: BlogListItem | null }) {
             <p className="text-[0.72rem] font-medium tracking-[0.22em] text-accent uppercase">
               Selected work
             </p>
-            <h2 className="mt-3 font-serif text-4xl tracking-tight md:text-5xl">
-              A few public things.
-            </h2>
+            <RevealHeading
+              as="h2"
+              inView
+              text="A few public things."
+              className="mt-3 font-serif text-4xl tracking-tight md:text-5xl"
+            />
           </div>
           <Link href="/work" className="hidden text-sm text-muted hover:text-ink sm:inline">
             All of it
@@ -51,9 +55,12 @@ export default function HomeRest({ latest }: { latest: BlogListItem | null }) {
           <p className="text-[0.72rem] font-medium tracking-[0.22em] text-accent uppercase">
             Now
           </p>
-          <h2 className="mt-3 font-serif text-4xl tracking-tight">
-            What I’m doing.
-          </h2>
+          <RevealHeading
+            as="h2"
+            inView
+            text="What I’m doing."
+            className="mt-3 font-serif text-4xl tracking-tight"
+          />
           <p className="mt-4 text-sm text-faint">Updated {now.updated}</p>
         </div>
         <ul className="md:col-span-8">
@@ -84,17 +91,23 @@ export default function HomeRest({ latest }: { latest: BlogListItem | null }) {
               {formatCategory(latest.category)} · {formatDate(latest.date)} ·{" "}
               {latest.readingTime}
             </p>
-            <h2 className="mt-3 font-serif text-4xl tracking-tight transition-colors group-hover:text-accent md:text-5xl">
-              {latest.title}
-            </h2>
+            <RevealHeading
+              as="h2"
+              inView
+              text={latest.title}
+              className="mt-3 font-serif text-4xl tracking-tight transition-colors group-hover:text-accent md:text-5xl"
+            />
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
               {latest.description}
             </p>
           </Link>
         ) : (
-          <h2 className="mt-4 max-w-xl font-serif text-4xl tracking-tight">
-            The notebook is open. The first published note will land here.
-          </h2>
+          <RevealHeading
+            as="h2"
+            inView
+            text="The notebook is open. The first published note will land here."
+            className="mt-4 max-w-xl font-serif text-4xl tracking-tight"
+          />
         )}
         <Link
           href="/blog"

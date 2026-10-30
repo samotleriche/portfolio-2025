@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/site/page-header";
+import RevealHeading from "@/components/site/heading-reveal";
 import { education, roles, site, skills } from "@/lib/site";
 import profile from "./profilePic.jpg";
 
@@ -59,7 +60,12 @@ export default function AboutPage() {
       </div>
 
       <section className="mt-20 border-t border-line pt-12">
-        <h2 className="font-serif text-3xl tracking-tight">Experience</h2>
+        <RevealHeading
+          as="h2"
+          inView
+          text="Experience"
+          className="font-serif text-3xl tracking-tight"
+        />
         <ol className="mt-8">
           {roles.map((role) => (
             <li
@@ -83,7 +89,12 @@ export default function AboutPage() {
 
       <section className="mt-8 grid gap-12 border-t border-line pt-12 md:grid-cols-2">
         <div>
-          <h2 className="font-serif text-3xl tracking-tight">Education</h2>
+          <RevealHeading
+            as="h2"
+            inView
+            text="Education"
+            className="font-serif text-3xl tracking-tight"
+          />
           <ul className="mt-6 space-y-5">
             {education.map((item) => (
               <li key={item.school}>
@@ -94,7 +105,12 @@ export default function AboutPage() {
           </ul>
         </div>
         <div>
-          <h2 className="font-serif text-3xl tracking-tight">Tools</h2>
+          <RevealHeading
+            as="h2"
+            inView
+            text="Tools"
+            className="font-serif text-3xl tracking-tight"
+          />
           <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
             {skills.map((skill) => (
               <li key={skill} className="text-ink">

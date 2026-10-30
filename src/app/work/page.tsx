@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import PageHeader from "@/components/site/page-header";
+import RevealHeading from "@/components/site/heading-reveal";
 import { projects } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,9 +26,12 @@ export default function WorkPage() {
           >
             <p className="text-sm text-faint md:col-span-2">0{index + 1}</p>
             <div className="md:col-span-10">
-              <h2 className="font-serif text-4xl tracking-tight md:text-6xl">
-                {project.name}
-              </h2>
+              <RevealHeading
+                as="h2"
+                inView
+                text={project.name}
+                className="font-serif text-4xl tracking-tight md:text-6xl"
+              />
               <p className="mt-3 text-sm text-accent">{project.role}</p>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
                 {project.summary}
