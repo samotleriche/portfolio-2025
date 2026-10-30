@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/site/page-header";
+import RevealHeading from "@/components/site/heading-reveal";
 import RiveFrame from "@/components/rive-frame";
 
 export const metadata: Metadata = {
@@ -42,9 +43,12 @@ export default function ExperimentsPage() {
           >
             <div className="lg:col-span-4">
               <p className="text-sm text-faint">{piece.index}</p>
-              <h2 className="mt-3 font-serif text-4xl tracking-tight">
-                {piece.title}
-              </h2>
+              <RevealHeading
+                as="h2"
+                inView
+                text={piece.title}
+                className="mt-3 font-serif text-4xl tracking-tight"
+              />
               <p className="mt-4 leading-relaxed text-muted">{piece.copy}</p>
             </div>
             <div className="aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-[#171513] lg:col-span-8">

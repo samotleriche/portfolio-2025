@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import RevealHeading from "@/components/site/heading-reveal";
 
 export default function PageHeader({
   eyebrow,
@@ -14,9 +15,11 @@ export default function PageHeader({
       <p className="text-[0.72rem] font-medium tracking-[0.22em] text-accent uppercase">
         {eyebrow}
       </p>
-      <h1 className="mt-4 font-serif text-[clamp(2.8rem,6vw,4.6rem)] leading-[0.95] font-medium tracking-[-0.03em]">
-        {title}
-      </h1>
+      <RevealHeading
+        rule
+        text={title}
+        className="mt-4 font-serif text-[clamp(2.8rem,6vw,4.6rem)] leading-[0.95] font-medium tracking-[-0.03em]"
+      />
       {children ? (
         <div className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
           {children}

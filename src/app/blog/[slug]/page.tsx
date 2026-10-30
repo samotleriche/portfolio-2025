@@ -10,6 +10,7 @@ import {
 } from "@/lib/blog-server";
 import { extractHeadings, renderMarkdown } from "@/lib/markdown";
 import { formatCategory, formatDate } from "@/lib/format";
+import RevealHeading from "@/components/site/heading-reveal";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -85,9 +86,11 @@ export default async function BlogPostPage({ params }: Props) {
                 · {formatDate(post.date)} · {post.readingTime}
               </span>
             </p>
-            <h1 className="mt-4 font-serif text-[clamp(2.6rem,5vw,4.4rem)] leading-[1.02] font-medium tracking-[-0.03em]">
-              {post.title}
-            </h1>
+            <RevealHeading
+              rule
+              text={post.title}
+              className="mt-4 font-serif text-[clamp(2.6rem,5vw,4.4rem)] leading-[1.02] font-medium tracking-[-0.03em]"
+            />
             <p className="mt-6 text-xl leading-relaxed text-muted">
               {post.description}
             </p>

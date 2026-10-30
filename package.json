@@ -14,7 +14,6 @@
     "blog:stats": "node scripts/blog-stats.js"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.4.3",
@@ -26,7 +25,6 @@
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
-    "gsap": "^3.15.0",
     "lucide-react": "^1.64.0",
     "marked": "^18.1.2",
     "next": "^16.4.3",

@@ -246,6 +246,59 @@ body {
   animation: avatar-float 8s ease-in-out infinite;
 }
 
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-rule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal="load"] [data-piece],
+  [data-reveal="play"] [data-piece] {
+    animation: reveal-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i) * 40ms);
+  }
+
+  [data-by="line"][data-reveal="load"] [data-piece],
+  [data-by="line"][data-reveal="play"] [data-piece] {
+    animation-delay: calc(var(--i) * 120ms);
+  }
+
+  [data-reveal="load"] [data-rule],
+  [data-reveal="play"] [data-rule] {
+    animation: reveal-rule 0.65s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation-delay: 160ms;
+  }
+
+  [data-by="line"][data-reveal="load"] [data-rule],
+  [data-by="line"][data-reveal="play"] [data-rule] {
+    animation-delay: 280ms;
+  }
+
+  [data-reveal="await"] [data-piece] {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+
+  [data-reveal="await"] [data-rule] {
+    transform: scaleX(0);
+  }
+}
+
 .avatar-glow {
   background: radial-gradient(
     circle at var(--mx, 50%) var(--my, 40%),
