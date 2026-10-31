@@ -32,8 +32,7 @@ export default function HomeHero() {
             className="mt-5 font-serif text-[clamp(4.2rem,10vw,7.4rem)] leading-[0.86] font-medium tracking-[-0.04em]"
           />
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-            {site.role} at {site.company}. I build for the web, and I like when
-            it moves.
+            {site.role}. I build for the web, and I like when it moves.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link

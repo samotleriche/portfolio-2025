@@ -15,8 +15,8 @@ export default function AboutPage() {
   return (
     <div className="w-section py-16 md:py-24">
       <PageHeader eyebrow="About" title="Seven years in, still building.">
-        Senior software engineer at Gradle. I care about interfaces with a
-        little craft in them, and about systems other people can change.
+        Senior software engineer. I care about interfaces with a little craft
+        in them, and about systems other people can change.
       </PageHeader>
 
       <div className="mt-14 grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
@@ -32,7 +32,7 @@ export default function AboutPage() {
         </div>
         <div className="max-w-xl space-y-5 text-lg leading-relaxed text-muted lg:col-span-7">
           <p>
-            I’m a senior software engineer at Gradle, where I work on
+            I was a senior software engineer at Gradle, where I worked on
             Gradle.com. Before that I led engineering at Long Lost Friends,
             built product at Non-Fungible Labs — later acquired by Futureverse —
             and worked on the buyer experience team at Atlassian.

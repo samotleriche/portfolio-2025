@@ -6,8 +6,6 @@
 export const site = {
   name: "Tomas Leriche",
   role: "Senior software engineer",
-  company: "Gradle",
-  companyUrl: "https://gradle.com",
   location: "Santa Monica, California",
   email: "samotleriche@gmail.com",
   github: "https://github.com/samotleriche",
@@ -23,7 +21,7 @@ export const projects = [
     role: "Senior software engineer",
     blurb: "The public site for Gradle’s build automation platform.",
     summary:
-      "I work on Gradle.com, the site for Gradle’s build tool. It’s the job I have now: product engineering on a page a lot of developers actually pass through.",
+      "I worked on Gradle.com, the site for Gradle’s build tool. Product engineering on a page a lot of developers actually pass through.",
   },
   {
     name: "Paragons",
@@ -47,8 +45,7 @@ export const roles = [
   {
     org: "Gradle Inc.",
     title: "Senior software engineer",
-    detail: "Building Gradle.com.",
-    when: "Present",
+    detail: "Built Gradle.com.",
   },
   {
     org: "Long Lost Friends Inc.",
@@ -97,7 +94,7 @@ export const now = {
   items: [
     {
       label: "Work",
-      text: "Senior software engineer at Gradle, building Gradle.com.",
+      text: "Most recently, senior software engineer at Gradle, building Gradle.com.",
     },
     {
       label: "Motion",

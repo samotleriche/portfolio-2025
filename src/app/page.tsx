@@ -1,4 +1,4 @@
-import HomeHero from "@/components/sections/home-hero";
+import HomeHero from "@/components/sections/hero";
 import HomeRest from "@/components/sections/home-rest";
 import { getPublishedPosts } from "@/lib/blog-server";
 

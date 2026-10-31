@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="max-w-sm">
           <p className="font-serif text-2xl tracking-tight">{site.name}</p>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            {site.role} at {site.company}. {site.location}.
+            {site.role}. {site.location}.
           </p>
         </div>
 
