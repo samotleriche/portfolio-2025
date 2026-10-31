@@ -45,34 +45,64 @@ export const roles = [
   {
     org: "Gradle Inc.",
     title: "Senior software engineer",
-    detail: "Built Gradle.com.",
-  },
-  {
-    org: "Long Lost Friends Inc.",
-    title: "Head of software development",
-    detail: "Led engineering, with the work centered on Web3.",
-  },
-  {
-    org: "Non-Fungible Labs",
-    title: "Product and architecture",
+    when: "Sep 2023 – Dec 2025",
     detail:
-      "Entrepreneurship, product development, and architecture. Acquired by Futureverse.",
+      "Built the new Gradle.com in Next.js with design and marketing. Interfaces, GSAP motion, and a component library in Storybook.",
+  },
+  {
+    org: "Long Lost Friends",
+    title: "Head of software development",
+    when: "Feb 2022 – Sep 2023",
+    detail:
+      "Led a nine-person engineering team. Staffed engineering and design, chose architectures, and set the workflows between them.",
+  },
+  {
+    org: "Futureverse",
+    title: "Senior full-stack software engineer",
+    when: "Sep 2021 – Jan 2022",
+    detail:
+      "Non-Fungible Labs, later Futureverse. Minting pages, an NFT marketplace, and interactive 3D on the web.",
   },
   {
     org: "Atlassian",
-    title: "Software engineer, buyer experience",
-    detail: "Full-stack work and A/B testing on the buyer experience team.",
+    title: "Full-stack software engineer",
+    when: "Mar 2021 – Sep 2021",
+    detail:
+      "Reusable React components in Storybook, and Magnolia CMS content wired into the buyer experience.",
+  },
+  {
+    org: "Improving",
+    title: "Full-stack software engineer",
+    when: "Aug 2020 – Feb 2021",
+    detail:
+      "Formerly Object Partners. Reusable React interfaces, server-rendered Next.js, and a GraphQL API.",
+  },
+  {
+    org: "Cognizant",
+    title: "Full-stack software engineer",
+    when: "Apr 2019 – Aug 2020",
+    detail:
+      "Spring Boot services and Angular interfaces, plus the CI pipelines that shipped them.",
+  },
+  {
+    org: "University of New Mexico",
+    title: "Graduate technical research assistant",
+    when: "Aug 2016 – Jan 2019",
+    detail:
+      "Part-time. A Node.js API and MySQL database for a research team, with a data-entry interface in front of it.",
   },
 ] as const;
 
 export const education = [
   {
     school: "UNM Anderson School",
-    credential: "Master of Science in Information Systems",
+    credential: "Master of Science in Information Systems and Assurance",
+    years: "2018",
   },
   {
     school: "University of Puget Sound",
     credential: "Bachelor of Science in Molecular and Cellular Biology",
+    years: "2014",
   },
 ] as const;
 
@@ -94,7 +124,7 @@ export const now = {
   items: [
     {
       label: "Work",
-      text: "Most recently, senior software engineer at Gradle, building Gradle.com.",
+      text: "I left Gradle after a little over two years on Gradle.com. Right now I’m traveling and working on personal projects, some of them software.",
     },
     {
       label: "Motion",

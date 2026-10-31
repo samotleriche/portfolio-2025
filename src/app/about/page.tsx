@@ -20,22 +20,25 @@ export default function AboutPage() {
       </PageHeader>
 
       <div className="mt-14 grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface lg:col-span-5">
-          <Image
-            src={profile}
-            alt="Tomas Leriche"
-            fill
-            priority
-            className="object-cover"
-            sizes="(min-width: 1024px) 380px, 90vw"
-          />
+        <div className="lg:col-span-4">
+          <div className="relative aspect-[4/5] w-full max-w-[13rem] overflow-hidden rounded-2xl bg-surface">
+            <Image
+              src={profile}
+              alt="Tomas Leriche"
+              fill
+              priority
+              className="object-cover"
+              sizes="208px"
+            />
+          </div>
         </div>
-        <div className="max-w-xl space-y-5 text-lg leading-relaxed text-muted lg:col-span-7">
+        <div className="max-w-xl space-y-5 text-lg leading-relaxed text-muted lg:col-span-8">
           <p>
-            I was a senior software engineer at Gradle, where I worked on
+            I was a senior software engineer at Gradle, where I built the new
             Gradle.com. Before that I led engineering at Long Lost Friends,
-            built product at Non-Fungible Labs — later acquired by Futureverse —
-            and worked on the buyer experience team at Atlassian.
+            shipped product at Non-Fungible Labs — later Futureverse — and
+            worked as a full-stack engineer at Atlassian, Improving, and
+            Cognizant.
           </p>
           <p>
             The front of the stack is where I like to spend time: React,
@@ -45,8 +48,9 @@ export default function AboutPage() {
           </p>
           <p>
             I studied information systems at UNM Anderson, and molecular and
-            cellular biology at the University of Puget Sound. I live in Santa
-            Monica.
+            cellular biology at the University of Puget Sound. English is
+            native, French is fluent, and Spanish is conversational. I live in
+            Santa Monica.
           </p>
           <p>
             <a
@@ -74,6 +78,7 @@ export default function AboutPage() {
             >
               <div className="md:col-span-4">
                 <p className="text-ink">{role.org}</p>
+                <p className="mt-1 text-sm text-accent">{role.when}</p>
               </div>
               <div className="md:col-span-8">
                 <p className="text-ink">{role.title}</p>
@@ -96,7 +101,9 @@ export default function AboutPage() {
             {education.map((item) => (
               <li key={item.school}>
                 <p className="text-ink">{item.credential}</p>
-                <p className="mt-1 text-sm text-muted">{item.school}</p>
+                <p className="mt-1 text-sm text-muted">
+                  {item.school} · {item.years}
+                </p>
               </li>
             ))}
           </ul>
