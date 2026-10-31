@@ -74,9 +74,6 @@ export default function AboutPage() {
             >
               <div className="md:col-span-4">
                 <p className="text-ink">{role.org}</p>
-                {"when" in role && role.when ? (
-                  <p className="mt-1 text-sm text-accent">{role.when}</p>
-                ) : null}
               </div>
               <div className="md:col-span-8">
                 <p className="text-ink">{role.title}</p>
