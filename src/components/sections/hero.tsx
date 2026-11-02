@@ -55,6 +55,9 @@ export default function HomeHero() {
             <a className="hover:text-ink" href={site.linkedin} target="_blank" rel="noreferrer">
               LinkedIn
             </a>
+            <a className="hover:text-ink" href={site.resume} download="Tomas-Leriche-Resume.pdf">
+              Resume
+            </a>
             <a className="hover:text-ink" href={`mailto:${site.email}`}>
               {site.email}
             </a>

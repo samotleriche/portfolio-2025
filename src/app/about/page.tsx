@@ -52,12 +52,19 @@ export default function AboutPage() {
             native, French is fluent, and Spanish is conversational. I live in
             Santa Monica.
           </p>
-          <p>
+          <p className="flex flex-wrap gap-x-5 gap-y-2">
             <a
               className="text-accent underline decoration-accent/40 underline-offset-4"
               href={`mailto:${site.email}`}
             >
               {site.email}
+            </a>
+            <a
+              className="text-accent underline decoration-accent/40 underline-offset-4"
+              href={site.resume}
+              download="Tomas-Leriche-Resume.pdf"
+            >
+              Resume
             </a>
           </p>
         </div>

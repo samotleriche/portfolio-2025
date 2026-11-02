@@ -47,6 +47,13 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
+            href={site.resume}
+            download="Tomas-Leriche-Resume.pdf"
+            className="text-muted transition-colors hover:text-ink"
+          >
+            Resume
+          </a>
+          <a
             href={`mailto:${site.email}`}
             className="text-muted transition-colors hover:text-ink"
           >

@@ -39,6 +39,15 @@ const nextConfig: NextConfig = {
           ]
         : []),
       {
+        source: "/resume.pdf",
+        headers: [
+          {
+            key: "Content-Disposition",
+            value: 'attachment; filename="Tomas-Leriche-Resume.pdf"',
+          },
+        ],
+      },
+      {
         source: "/images/:path*",
         headers: [
           {

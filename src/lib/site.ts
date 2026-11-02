@@ -10,6 +10,7 @@ export const site = {
   email: "samotleriche@gmail.com",
   github: "https://github.com/samotleriche",
   linkedin: "https://www.linkedin.com/in/tomasleriche/",
+  resume: "/resume.pdf",
   description:
     "Tomas Leriche is a software engineer and motion designer based in Santa Monica, California.",
 };
