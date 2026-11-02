@@ -22,7 +22,7 @@ export const projects = [
     role: "Senior software engineer",
     blurb: "The public site for Gradle’s build automation platform.",
     summary:
-      "I worked on Gradle.com, the site for Gradle’s build tool. Product engineering on a page a lot of developers actually pass through.",
+      "I built the new Gradle.com with design and marketing. Next.js for the site, GSAP for the motion, and a component library in Storybook. It’s a page a lot of developers actually pass through.",
   },
   {
     name: "Paragons",
@@ -30,7 +30,7 @@ export const projects = [
     role: "Product and architecture",
     blurb: "A Web3 product from Non-Fungible Labs.",
     summary:
-      "Paragons came out of Non-Fungible Labs, later acquired by Futureverse. I worked on the product and the architecture underneath it.",
+      "Paragons came out of Non-Fungible Labs, later acquired by Futureverse. I worked on the product and the architecture underneath it: minting pages, an NFT marketplace, and interactive 3D on the web.",
   },
   {
     name: "3D portfolio",
@@ -118,6 +118,15 @@ export const skills = [
   "Rive",
   "Lottie",
   "Spline",
+] as const;
+
+export const alsoShipped = [
+  "Java",
+  "Spring Boot",
+  "Angular",
+  "GraphQL",
+  "Node.js",
+  "MySQL",
 ] as const;
 
 export const now = {

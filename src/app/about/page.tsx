@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/site/page-header";
 import RevealHeading from "@/components/site/heading-reveal";
-import { education, roles, site, skills } from "@/lib/site";
+import { alsoShipped, education, roles, site, skills } from "@/lib/site";
 import profile from "./profilePic.jpg";
 
 export const metadata: Metadata = {
@@ -129,8 +129,10 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-sm text-muted">
-            The motion experiments live in the{" "}
+          <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
+            Earlier work also ran through {alsoShipped.slice(0, -1).join(", ")},
+            and {alsoShipped.at(-1)}. The motion
+            experiments live in the{" "}
             <Link href="/experiments" className="text-accent">
               lab
             </Link>

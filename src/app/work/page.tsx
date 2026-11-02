@@ -14,8 +14,7 @@ export default function WorkPage() {
   return (
     <div className="w-section py-16 md:py-24">
       <PageHeader eyebrow="Work" title="Things with a URL.">
-        The public ones. The jobs without a single page to point at — Long Lost
-        Friends, Non-Fungible Labs, Atlassian — are on the about page.
+        The public ones. Roles without a page to point at are on the about page.
       </PageHeader>
 
       <div className="mt-16 flex flex-col">
